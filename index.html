@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#145b52">
+  <title>Portal de pacientes | CESFAM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="login-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <main id="contenido" class="container min-vh-100 d-flex align-items-center justify-content-center py-4">
+    <div class="login-layout row g-0 overflow-hidden rounded-4 shadow-lg">
+      <section class="login-intro col-lg-5 d-none d-lg-flex flex-column justify-content-between p-5 text-white">
+        <a class="brand brand-light" href="index.html"><span class="brand-mark"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span> CESFAM <span class="visually-hidden">- inicio</span></a>
+        <div>
+          <span class="eyebrow text-white-50">PORTAL DE PACIENTES</span>
+          <h1 class="display-6 fw-semibold mt-3">Tu salud y la de tu comunidad, más cerca.</h1>
+          <p class="lead text-white-50 mt-3">Revisa tus citaciones, consulta prestaciones y encuentra información de salud.</p>
+        </div>
+        <p class="small text-white-50 mb-0">Maqueta demostrativa · No contiene información clínica real</p>
+      </section>
+
+      <section class="login-form-panel col-lg-7 p-4 p-md-5">
+        <a class="brand d-lg-none mb-4" href="index.html"><span class="brand-mark"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span> CESFAM</a>
+        <div class="mx-auto login-form-content">
+          <span class="eyebrow">ACCESO A PACIENTES</span>
+          <h2 class="h2 fw-semibold mt-2">Ingresa a tu portal</h2>
+          <p class="text-secondary mb-4">Usa el RUT o correo electrónico asociado a tu cuenta.</p>
+
+          <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+            <div class="mb-3">
+              <label for="identifier" class="form-label">RUT o correo electrónico</label>
+              <input type="text" class="form-control form-control-lg" id="identifier" name="identifier" placeholder="12.345.678-9 o correo@ejemplo.cl" autocomplete="username" required>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <label for="password" class="form-label">Contraseña</label>
+                <a class="small fw-semibold" href="#recuperar">¿Necesitas ayuda para ingresar?</a>
+              </div>
+              <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Escribe tu contraseña" autocomplete="current-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100">Ingresar <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></button>
+          </form>
+
+          <div class="login-divider" aria-hidden="true"><span>o también</span></div>
+          <a class="claveunica-button" href="claveunica.html">
+            <i class="fa-regular fa-id-badge" aria-hidden="true"></i>
+            <span>Iniciar sesión</span>
+          </a>
+          <p class="small text-secondary mt-2 mb-0">Acceso de demostración. No se conecta con ClaveÚnica.</p>
+
+          <div class="border-top mt-4 pt-4">
+            <p class="mb-2 fw-semibold">¿Primera vez en el portal?</p>
+            <p class="small text-secondary mb-3">Solicita crear tu cuenta. La validación de identidad y correo requiere conexión con los servicios oficiales.</p>
+            <button class="btn btn-outline-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#registroModal">Solicitar registro</button>
+          </div>
+          <p id="recuperar" class="small text-secondary mt-4 mb-0"><i class="fa-solid fa-circle-info me-1" aria-hidden="true"></i>Si no puedes acceder, consulta en Admisión de tu CESFAM por los canales oficiales.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><span class="eyebrow">NUEVA CUENTA</span><h2 class="modal-title h4 fw-semibold mt-1" id="registroTitulo">Solicitar registro</h2></div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <form onsubmit="event.preventDefault(); document.getElementById('registrationStatus').classList.remove('d-none');">
+          <div class="modal-body">
+            <div id="registrationStatus" class="alert alert-info d-none" role="status">Esta es una maqueta. Para activar una cuenta real se requiere validación segura de identidad y correo.</div>
+            <p class="small text-secondary">Ingresa tus datos de contacto. No escribas información sobre diagnósticos ni tratamientos.</p>
+            <div class="mb-3"><label for="registerRut" class="form-label">RUT *</label><input id="registerRut" class="form-control" name="rut" placeholder="12.345.678-9" autocomplete="off" required></div>
+            <div class="mb-3"><label for="registerEmail" class="form-label">Correo electrónico *</label><input id="registerEmail" class="form-control" name="email" type="email" placeholder="tu@correo.cl" autocomplete="email" required></div>
+          </div>
+          <div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button><button type="submit" class="btn btn-primary">Continuar</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

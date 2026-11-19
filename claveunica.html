@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>ClaveÚnica | Portal de pacientes CESFAM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="clave-page">
+  <a class="skip-link" href="#contenido">Saltar al formulario</a>
+  <main id="contenido" class="container min-vh-100 d-flex align-items-center justify-content-center py-4">
+    <section class="clave-card" aria-labelledby="claveTitle">
+      <div class="chile-stripe" aria-hidden="true"><span></span><span></span></div>
+      <header class="clave-header">
+        <a class="clave-wordmark" href="index.html" aria-label="Volver al inicio del portal CESFAM">
+          <span class="clave-symbol" aria-hidden="true"><i class="fa-regular fa-id-badge"></i></span>
+          <span>Clave<span class="clave-wordmark-light">Única</span></span>
+        </a>
+        <div class="accessibility-tools" aria-label="Opciones de visualización">
+          <button type="button" class="accessibility-button" id="contrastToggle" aria-label="Activar alto contraste" title="Activar alto contraste"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i></button>
+          <button type="button" class="accessibility-button text-sm" id="fontDecrease" aria-label="Disminuir tamaño del texto">A-</button>
+          <button type="button" class="accessibility-button text-lg" id="fontIncrease" aria-label="Aumentar tamaño del texto">A+</button>
+        </div>
+      </header>
+
+      <div class="clave-content">
+        <div class="demo-alert" role="note"><i class="fa-solid fa-circle-info me-2" aria-hidden="true"></i>Maqueta de demostración, no es el sitio oficial de ClaveÚnica. No ingreses tu contraseña real.</div>
+        <h1 id="claveTitle">Portal Ciudadano ClaveÚnica</h1>
+        <p class="visually-hidden" id="loginHelp">Formulario de ejemplo para representar el acceso mediante ClaveÚnica. No se validan ni transmiten credenciales.</p>
+
+        <form onsubmit="event.preventDefault(); const status = document.getElementById('claveStatus'); status.classList.remove('d-none');">
+          <div class="mb-4">
+            <label class="visually-hidden" for="run">Ingresa tu RUN</label>
+            <input class="form-control clave-input" type="text" id="run" name="run" placeholder="Ingresa tu RUN" autocomplete="off" aria-describedby="loginHelp" required>
+          </div>
+          <div class="input-group mb-4">
+            <label class="visually-hidden" for="clavePassword">Ingresa tu ClaveÚnica</label>
+            <input class="form-control clave-input" type="password" id="clavePassword" name="password" placeholder="Ingresa tu ClaveÚnica" autocomplete="new-password" aria-describedby="loginHelp" required>
+            <button type="button" class="btn clave-eye" id="togglePassword" aria-label="Mostrar contraseña" aria-pressed="false"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+          </div>
+
+          <div class="clave-help-links">
+            <button type="button" class="link-button" data-help="Recupera tu ClaveÚnica: visita los canales oficiales del Gobierno de Chile.">Recupera tu ClaveÚnica</button>
+            <button type="button" class="link-button" data-help="Solicita tu ClaveÚnica en los canales oficiales del Gobierno de Chile.">Solicita tu ClaveÚnica</button>
+          </div>
+
+          <div class="alert alert-info d-none mt-3" id="claveStatus" role="status">
+            Este formulario es solo una maqueta: no valida ni envía credenciales a ClaveÚnica.
+            <a href="dashboard.html" class="alert-link d-block mt-2">Continuar al portal de demostración</a>
+          </div>
+          <div class="alert alert-secondary d-none mt-3" id="helpStatus" role="status"></div>
+          <button type="submit" class="btn clave-submit w-100 mt-4">INGRESA</button>
+        </form>
+        <div class="text-center mt-4"><button class="link-button help-button" type="button" data-help="Para ayuda con esta maqueta, vuelve al acceso del portal CESFAM y consulta Admisión por los canales oficiales.">¿Necesitas ayuda?</button></div>
+      </div>
+      <footer class="clave-footer"><a href="index.html"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>Volver al acceso CESFAM</a></footer>
+    </section>
+  </main>
+  <script>
+    const root = document.documentElement;
+    let textScale = 1;
+    document.getElementById('fontIncrease').addEventListener('click', () => {
+      textScale = Math.min(1.3, textScale + 0.1);
+      root.style.setProperty('--clave-text-scale', textScale);
+    });
+    document.getElementById('fontDecrease').addEventListener('click', () => {
+      textScale = Math.max(0.9, textScale - 0.1);
+      root.style.setProperty('--clave-text-scale', textScale);
+    });
+    document.getElementById('contrastToggle').addEventListener('click', (event) => {
+      const active = document.body.classList.toggle('high-contrast');
+      event.currentTarget.setAttribute('aria-pressed', String(active));
+      event.currentTarget.setAttribute('aria-label', active ? 'Desactivar alto contraste' : 'Activar alto contraste');
+    });
+    document.getElementById('togglePassword').addEventListener('click', (event) => {
+      const input = document.getElementById('clavePassword');
+      const visible = input.type === 'password';
+      input.type = visible ? 'text' : 'password';
+      event.currentTarget.setAttribute('aria-pressed', String(visible));
+      event.currentTarget.setAttribute('aria-label', visible ? 'Ocultar contraseña' : 'Mostrar contraseña');
+    });
+    document.querySelectorAll('[data-help]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const status = document.getElementById('helpStatus');
+        status.textContent = button.dataset.help;
+        status.classList.remove('d-none');
+      });
+    });
+  </script>
+</body>
+</html>
