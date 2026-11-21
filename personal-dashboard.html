@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1264ad">
+  <title>Panel directivo | Personal CESFAM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="staff-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" aria-label="Navegación interna del CESFAM">
+    <div class="container-fluid px-lg-4">
+      <a class="navbar-brand brand" href="personal-dashboard.html"><span class="brand-mark"><i class="fa-solid fa-hospital-user" aria-hidden="true"></i></span> CESFAM <span class="staff-label">Personal</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#staffNav" aria-controls="staffNav" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="staffNav"><ul class="navbar-nav me-auto ms-lg-3"><li class="nav-item"><a class="nav-link active" aria-current="page" href="personal-dashboard.html">Dirección</a></li><li class="nav-item"><a class="nav-link" href="personal-agenda.html">Agenda médica</a></li><li class="nav-item"><a class="nav-link" href="personal-listado.html">Listado diario</a></li><li class="nav-item"><a class="nav-link" href="personal-reportes.html">Reportes</a></li></ul><div class="d-flex align-items-center gap-3 py-3 py-lg-0"><span class="badge text-bg-danger"><i class="fa-solid fa-lock me-1" aria-hidden="true"></i>Acceso directivo · demo</span><a class="btn btn-outline-secondary" href="dashboard.html">Portal pacientes</a></div></div>
+    </div>
+  </nav>
+
+  <main id="contenido" class="container-fluid px-3 px-lg-5 py-4 py-lg-5">
+    <div class="d-flex flex-column flex-xl-row justify-content-between align-items-xl-end gap-3 mb-4">
+      <div><nav aria-label="Ruta de navegación"><ol class="breadcrumb mb-2"><li class="breadcrumb-item active" aria-current="page">Personal CESFAM</li></ol></nav><span class="eyebrow">HU-19 · INDICADORES DE GESTIÓN</span><h1 class="h2 fw-bold mt-2 mb-1">Panel directivo</h1><p class="text-secondary mb-0">Resumen de atenciones, inasistencias y metas sanitarias.</p></div>
+      <div class="d-flex flex-wrap gap-2 screen-only"><label class="visually-hidden" for="period">Período del reporte</label><select class="form-select" id="period"><option>Noviembre 2026 (demo)</option><option>Octubre 2026 (demo)</option><option>Último trimestre (demo)</option></select><button class="btn btn-outline-primary" type="button" onclick="window.print()"><i class="fa-solid fa-print me-2" aria-hidden="true"></i>Imprimir resumen</button></div>
+    </div>
+    <div class="alert alert-warning" role="note"><strong>Maqueta de acceso restringido.</strong> Cifras ficticias para representar un panel ejecutivo; no son estadísticas oficiales ni datos del CESFAM.</div>
+
+    <section class="row g-3 g-lg-4 mb-4" aria-label="Indicadores del período">
+      <div class="col-sm-6 col-xl-3"><article class="card metric-card h-100"><div class="card-body"><span class="metric-icon icon-blue"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span><p class="text-secondary fw-semibold mt-3 mb-1">Atenciones realizadas</p><p class="display-6 fw-bold mb-1">1.248</p><p class="small mb-0">Período de ejemplo</p></div></article></div>
+      <div class="col-sm-6 col-xl-3"><article class="card metric-card h-100"><div class="card-body"><span class="metric-icon icon-orange"><i class="fa-regular fa-calendar-xmark" aria-hidden="true"></i></span><p class="text-secondary fw-semibold mt-3 mb-1">Inasistencia</p><p class="display-6 fw-bold mb-1">14,8%</p><p class="small text-danger mb-0"><i class="fa-solid fa-arrow-up me-1" aria-hidden="true"></i>+1,2 puntos vs. período previo</p></div></article></div>
+      <div class="col-sm-6 col-xl-3"><article class="card metric-card h-100"><div class="card-body"><span class="metric-icon icon-purple"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span><p class="text-secondary fw-semibold mt-3 mb-1">Cumplimiento de metas</p><p class="display-6 fw-bold mb-1">82%</p><p class="small mb-0">Meta referencial: 90%</p></div></article></div>
+      <div class="col-sm-6 col-xl-3"><article class="card metric-card h-100"><div class="card-body"><span class="metric-icon icon-green"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></span><p class="text-secondary fw-semibold mt-3 mb-1">Horas no utilizadas</p><p class="display-6 fw-bold mb-1">96</p><p class="small mb-0">Estimación de ejemplo</p></div></article></div>
+    </section>
+
+    <div class="row g-4 mb-4">
+      <section class="col-xl-7" aria-labelledby="targetsTitle">
+        <div class="card dashboard-card h-100">
+          <div class="card-header bg-white px-4 py-3"><h2 class="h4 fw-bold mb-1" id="targetsTitle">Avance de metas sanitarias</h2><p class="mb-0">Indicadores resumidos para seguimiento directivo · valores ficticios.</p></div>
+          <div class="card-body p-4">
+            <div class="target-row"><div class="d-flex justify-content-between gap-2"><strong>Controles preventivos</strong><span>82% / meta 90%</span></div><div class="progress mt-2" role="progressbar" aria-label="Controles preventivos, 82 por ciento" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:82%"></div></div></div>
+            <div class="target-row"><div class="d-flex justify-content-between gap-2"><strong>Vacunación programática</strong><span>91% / meta 95%</span></div><div class="progress mt-2" role="progressbar" aria-label="Vacunación programática, 91 por ciento" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-success" style="width:91%"></div></div></div>
+            <div class="target-row"><div class="d-flex justify-content-between gap-2"><strong>Seguimiento cardiovascular</strong><span>74% / meta 85%</span></div><div class="progress mt-2" role="progressbar" aria-label="Seguimiento cardiovascular, 74 por ciento" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-warning" style="width:74%"></div></div></div>
+            <div class="target-row"><div class="d-flex justify-content-between gap-2"><strong>Atención odontológica</strong><span>68% / meta 80%</span></div><div class="progress mt-2" role="progressbar" aria-label="Atención odontológica, 68 por ciento" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-info" style="width:68%"></div></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="col-xl-5" aria-labelledby="absenceTitle">
+        <div class="card dashboard-card h-100">
+          <div class="card-header bg-white px-4 py-3"><h2 class="h4 fw-bold mb-1" id="absenceTitle">Inasistencias por sector</h2><p class="mb-0">Proporción de horas no atendidas · ejemplo.</p></div>
+          <div class="card-body p-4">
+            <div class="absence-chart" role="img" aria-label="Gráfico ilustrativo de inasistencias: sector azul 12 por ciento, sector verde 18 por ciento, sector amarillo 9 por ciento">
+              <div class="chart-column"><span class="chart-value">12%</span><div class="chart-bar" style="height:48%"></div><span>Azul</span></div>
+              <div class="chart-column"><span class="chart-value">18%</span><div class="chart-bar chart-bar-alt" style="height:72%"></div><span>Verde</span></div>
+              <div class="chart-column"><span class="chart-value">9%</span><div class="chart-bar chart-bar-third" style="height:36%"></div><span>Amarillo</span></div>
+              <div class="chart-column"><span class="chart-value">14%</span><div class="chart-bar" style="height:56%"></div><span>Rojo</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card dashboard-card" aria-labelledby="monthlyTitle">
+      <div class="card-header bg-white px-4 py-3"><h2 class="h4 fw-bold mb-1" id="monthlyTitle">Resumen por período</h2><p class="mb-0">Datos agregados ficticios.</p></div>
+      <div class="table-responsive"><table class="table align-middle mb-0 staff-table"><caption class="visually-hidden">Resumen mensual de atenciones, inasistencias y cumplimiento para datos de demostración</caption><thead><tr><th scope="col">Período</th><th scope="col">Atenciones</th><th scope="col">Inasistencias</th><th scope="col">Meta sanitaria</th><th scope="col">Tendencia</th></tr></thead><tbody><tr><td>Noviembre (demo)</td><td>1.248</td><td>14,8%</td><td>82%</td><td><span class="text-danger"><i class="fa-solid fa-arrow-trend-up me-1" aria-hidden="true"></i>Inasistencia al alza</span></td></tr><tr><td>Octubre (demo)</td><td>1.190</td><td>13,6%</td><td>79%</td><td><span class="text-success"><i class="fa-solid fa-arrow-trend-down me-1" aria-hidden="true"></i>Mejora en metas</span></td></tr></tbody></table></div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

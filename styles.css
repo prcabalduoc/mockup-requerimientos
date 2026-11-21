@@ -136,6 +136,23 @@ a:hover { color: #083e70; }
 .site-footer { background: #e8eff5; border-top: 1px solid var(--health-border); color: #263746; }
 .search-form { max-width: 100%; width: min(100%, 28rem); }
 .search-form .form-control { min-width: 8rem; }
+.staff-page { background: #f3f6f9; }
+.staff-label { background: #e6f0f8; border: 1px solid #c5d9e9; border-radius: 999px; color: #164b69; font-size: .72rem; letter-spacing: 0; padding: .15rem .55rem; }
+.staff-table { --bs-table-striped-bg: #f5f8fb; }
+.staff-table th { background: #edf3f8; color: #263746; font-size: .85rem; white-space: nowrap; }
+.staff-table .table-group-row th { background: #dceaf5; color: #173d5c; font-size: .95rem; }
+.staff-table td { min-width: 7rem; }
+.staff-table td:first-child { min-width: 9rem; }
+.target-row + .target-row { margin-top: 1.4rem; }
+.absence-chart { align-items: end; border-bottom: 2px solid #738696; display: flex; gap: clamp(1rem, 5vw, 3rem); height: 17rem; justify-content: center; padding: 1rem 1rem 0; }
+.chart-column { align-items: center; display: flex; flex: 0 1 5rem; flex-direction: column; height: 100%; justify-content: end; }
+.chart-value { font-size: .9rem; font-weight: 700; margin-bottom: .35rem; }
+.chart-bar { background: #1264ad; border-radius: .4rem .4rem 0 0; min-height: .4rem; width: min(100%, 3rem); }
+.chart-bar-alt { background: #815cad; }
+.chart-bar-third { background: #dd9935; }
+.chart-column > span:last-child { font-size: .9rem; font-weight: 700; padding: .45rem 0; }
+.stock-progress { height: .75rem; min-width: 5rem; }
+.print-header { display: none; }
 
 .login-page { background: radial-gradient(ellipse at 15% 15%, #e4eff8 0, transparent 38%), #f4f7fa; }
 .login-layout { background: white; max-width: 1100px; min-height: 600px; width: 100%; }
@@ -276,4 +293,14 @@ a:hover { color: #083e70; }
   body { background: #fff; color: #000; font-size: 12pt; }
   a { color: #000; }
   .card, .notice-card { box-shadow: none; break-inside: avoid; }
+  .screen-only { display: none !important; }
+  .print-header { display: block; margin-bottom: 1rem; }
+  .print-brand { border-bottom: 2px solid #000; font-size: 1rem; font-weight: 700; padding-bottom: .5rem; }
+  .staff-table { font-size: 9pt; }
+  .staff-table th, .staff-table td { min-width: 0; padding: .35rem !important; }
+  .staff-table .table-group-row th { background: #e3e3e3 !important; color: #000 !important; }
+  .staff-table thead { display: table-header-group; }
+  .staff-table tr { break-inside: avoid; }
+  .staff-page { background: #fff; }
+  .badge { border: 1px solid #555; color: #000 !important; background: transparent !important; }
 }
