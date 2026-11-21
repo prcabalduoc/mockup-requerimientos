@@ -27,11 +27,10 @@
       </header>
 
       <div class="clave-content">
-        <div class="demo-alert" role="note"><i class="fa-solid fa-circle-info me-2" aria-hidden="true"></i>Maqueta de demostración, no es el sitio oficial de ClaveÚnica. No ingreses tu contraseña real.</div>
         <h1 id="claveTitle">Portal Ciudadano ClaveÚnica</h1>
-        <p class="visually-hidden" id="loginHelp">Formulario de ejemplo para representar el acceso mediante ClaveÚnica. No se validan ni transmiten credenciales.</p>
+        <p class="clave-disclaimer" id="loginHelp">Pantalla de acceso ClaveÚnica. No ingreses tu contraseña real aquí.</p>
 
-        <form onsubmit="event.preventDefault(); const status = document.getElementById('claveStatus'); status.classList.remove('d-none');">
+        <form onsubmit="event.preventDefault(); document.getElementById('claveStatus').classList.remove('d-none');">
           <div class="mb-4">
             <label class="visually-hidden" for="run">Ingresa tu RUN</label>
             <input class="form-control clave-input" type="text" id="run" name="run" placeholder="Ingresa tu RUN" autocomplete="off" aria-describedby="loginHelp" required>
@@ -47,11 +46,11 @@
             <button type="button" class="link-button" data-help="Solicita tu ClaveÚnica en los canales oficiales del Gobierno de Chile.">Solicita tu ClaveÚnica</button>
           </div>
 
-          <div class="alert alert-info d-none mt-3" id="claveStatus" role="status">
-            Este formulario es solo una maqueta: no valida ni envía credenciales a ClaveÚnica.
-            <a href="dashboard.html" class="alert-link d-block mt-2">Continuar al portal de demostración</a>
+          <div class="form-feedback d-none mt-3" id="claveStatus" role="status">
+            No se validaron ni enviaron credenciales.
+            <a href="dashboard.html" class="d-block mt-2">Continuar al portal</a>
           </div>
-          <div class="alert alert-secondary d-none mt-3" id="helpStatus" role="status"></div>
+          <div class="form-feedback d-none mt-3" id="helpStatus" role="status"></div>
           <button type="submit" class="btn clave-submit w-100 mt-4">INGRESA</button>
         </form>
         <div class="text-center mt-4"><button class="link-button help-button" type="button" data-help="Para ayuda con esta maqueta, vuelve al acceso del portal CESFAM y consulta Admisión por los canales oficiales.">¿Necesitas ayuda?</button></div>

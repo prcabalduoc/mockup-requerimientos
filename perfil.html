@@ -42,11 +42,11 @@
       </aside>
       <section class="col-lg-8 col-xl-9">
         <form onsubmit="event.preventDefault(); document.getElementById('profileStatus').classList.remove('d-none');">
-          <div class="alert alert-success d-none" id="profileStatus" role="status"><i class="fa-solid fa-circle-check me-2" aria-hidden="true"></i>Vista demostrativa: los datos no se han enviado ni guardado.</div>
+          <p class="form-feedback d-none" id="profileStatus" role="status">Los cambios no se han enviado ni guardado.</p>
           <div class="card dashboard-card mb-4" id="datos-personales">
             <div class="card-header bg-white px-4 py-3"><h2 class="h4 fw-bold mb-1">Datos personales y de contacto</h2><p class="mb-0">Los campos marcados con * son obligatorios.</p></div>
             <div class="card-body p-4">
-              <div class="alert alert-info" role="note"><i class="fa-solid fa-lock me-2" aria-hidden="true"></i>El RUT se utiliza para identificar tu cuenta. La validación real debe realizarse mediante un servicio seguro.</div>
+              <div class="privacy-note" role="note"><i class="fa-solid fa-lock me-2" aria-hidden="true"></i>El RUT se utiliza para identificar tu cuenta. La validación real debe realizarse mediante un servicio seguro.</div>
               <div class="row g-3">
                 <div class="col-md-6"><label class="form-label" for="firstName">Nombre *</label><input class="form-control form-control-lg" id="firstName" name="firstName" value="María" autocomplete="given-name" required></div>
                 <div class="col-md-6"><label class="form-label" for="lastName">Apellidos *</label><input class="form-control form-control-lg" id="lastName" name="lastName" value="Castro" autocomplete="family-name" required></div>

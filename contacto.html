@@ -35,7 +35,7 @@
             <h2 class="h4 fw-bold mb-1" id="formTitle">Formulario de contacto</h2>
             <p class="text-secondary mb-4">Los campos con * son obligatorios. Evita incluir información clínica sensible.</p>
             <form onsubmit="event.preventDefault(); document.getElementById('contactStatus').classList.remove('d-none');">
-              <div class="alert alert-success d-none" id="contactStatus" role="status"><i class="fa-solid fa-circle-check me-2" aria-hidden="true"></i>Esta maqueta no envía tu solicitud. Para presentar un requerimiento real, usa los canales oficiales del CESFAM.</div>
+              <p class="form-feedback d-none" id="contactStatus" role="status">La solicitud no se envió. Para presentar un requerimiento real, usa los canales oficiales del CESFAM.</p>
               <div class="row g-3">
                 <div class="col-md-6"><label for="contactName" class="form-label">Nombre completo *</label><input class="form-control form-control-lg" id="contactName" name="name" placeholder="Tu nombre y apellidos" autocomplete="name" required></div>
                 <div class="col-md-6"><label for="contactEmail" class="form-label">Correo electrónico *</label><input class="form-control form-control-lg" id="contactEmail" name="email" type="email" placeholder="tu@correo.cl" autocomplete="email" required></div>

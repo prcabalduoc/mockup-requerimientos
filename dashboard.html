@@ -82,7 +82,7 @@
           </div>
           <div class="card-body p-4">
             <form onsubmit="event.preventDefault(); document.getElementById('bookingStatus').classList.remove('d-none');">
-              <div id="bookingStatus" class="alert alert-info d-none" role="status">Solicitud de ejemplo registrada en pantalla. La reserva real requiere conexión con la agenda del CESFAM.</div>
+              <p id="bookingStatus" class="form-feedback d-none" role="status">No se reservó una hora real; consulta la disponibilidad con el CESFAM.</p>
               <div class="row g-3">
                 <div class="col-md-6"><label class="form-label" for="appointmentType">Tipo de atención *</label><select class="form-select form-select-lg" id="appointmentType" required><option value="" selected disabled>Elige una prestación</option><option>Morbilidad</option><option>Control preventivo</option><option>Control de salud</option></select></div>
                 <div class="col-md-6"><label class="form-label" for="sector">Sector o equipo *</label><select class="form-select form-select-lg" id="sector" required><option value="" selected disabled>Selecciona sector</option><option>Sector azul (ejemplo)</option><option>Sector verde (ejemplo)</option><option>Por asignar</option></select></div>

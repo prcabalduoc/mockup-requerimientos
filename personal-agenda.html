@@ -26,12 +26,11 @@
       <h1 class="h2 fw-bold mt-2 mb-1">Gestión de agenda médica</h1>
       <p class="text-secondary mb-0">Administra la oferta horaria publicada, profesionales, sectores y boxes clínicos.</p>
     </div>
-    <div class="alert alert-warning" role="note"><strong>Prototipo interno.</strong> Las modificaciones de esta pantalla no alteran una agenda real. En producción, el acceso debe estar restringido a personal autorizado y dejar registro de cambios.</div>
     <section class="card dashboard-card mb-4" aria-labelledby="createSlotTitle">
       <div class="card-header bg-white px-4 py-3"><h2 class="h4 fw-bold mb-1" id="createSlotTitle">Agregar bloque horario</h2><p class="mb-0">Define la prestación y el espacio disponible para la atención.</p></div>
       <div class="card-body p-4">
         <form onsubmit="event.preventDefault(); document.getElementById('agendaStatus').classList.remove('d-none');">
-          <div class="alert alert-success d-none" id="agendaStatus" role="status">Bloque de ejemplo procesado en la interfaz. No se guardaron cambios en una agenda real.</div>
+          <p class="form-feedback d-none" id="agendaStatus" role="status">No se guardaron cambios en una agenda real.</p>
           <div class="row g-3">
             <div class="col-md-6 col-xl-3"><label for="professional" class="form-label">Profesional *</label><select class="form-select" id="professional" required><option value="" selected disabled>Seleccionar profesional</option><option>Profesional A (demo)</option><option>Profesional B (demo)</option></select></div>
             <div class="col-md-6 col-xl-3"><label for="service" class="form-label">Prestación *</label><select class="form-select" id="service" required><option value="" selected disabled>Seleccionar prestación</option><option>Morbilidad</option><option>Control preventivo</option><option>Control de salud</option></select></div>

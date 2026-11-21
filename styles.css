@@ -51,6 +51,8 @@ a:hover { color: #083e70; }
 .form-text, .text-secondary { color: var(--health-muted) !important; }
 .form-check-input { border-color: #687986; }
 .form-check-input:checked { background-color: var(--health-primary); border-color: var(--health-primary); }
+.form-feedback { color: var(--health-primary-dark); font-weight: 700; margin-bottom: 1rem; }
+.privacy-note { color: #263746; margin-bottom: 1rem; }
 
 :focus-visible {
   outline: 3px solid #e08b00 !important;
@@ -231,7 +233,7 @@ a:hover { color: #083e70; }
   margin: 1.05rem 0 1.75rem;
   text-align: center;
 }
-.demo-alert { background: #eef6fc; border-left: 4px solid #125a9c; color: #183c59; font-size: .9rem; padding: .7rem .8rem; }
+.clave-disclaimer { color: #4c5a67; font-size: .9rem; margin-bottom: 1rem; text-align: center; }
 .clave-input {
   border: 1px solid #444;
   border-radius: 0 !important;
@@ -270,7 +272,7 @@ a:hover { color: #083e70; }
 .high-contrast .accessibility-button { background: #000; border-color: #fff; color: #fff; }
 .high-contrast .clave-input { background: #000; border-color: #fff; color: #fff; }
 .high-contrast .clave-input::placeholder { color: #eee; }
-.high-contrast .demo-alert { background: #222; border-color: #ff0; color: #ff0; }
+.high-contrast .clave-disclaimer { color: #fff; }
 .high-contrast .clave-footer { border-color: #fff; }
 
 @media (max-width: 575.98px) {
