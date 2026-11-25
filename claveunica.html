@@ -28,12 +28,16 @@
 
       <div class="clave-content">
         <h1 id="claveTitle">Portal Ciudadano ClaveÚnica</h1>
-        <p class="clave-disclaimer" id="loginHelp">Pantalla de acceso ClaveÚnica. No ingreses tu contraseña real aquí.</p>
+        <p class="clave-disclaimer" id="loginHelp">Acceso seguro mediante ClaveÚnica o número de documento de cédula. No ingreses tu contraseña real aquí.</p>
 
         <form onsubmit="event.preventDefault(); document.getElementById('claveStatus').classList.remove('d-none');">
           <div class="mb-4">
             <label class="visually-hidden" for="run">Ingresa tu RUN</label>
             <input class="form-control clave-input" type="text" id="run" name="run" placeholder="Ingresa tu RUN" autocomplete="off" aria-describedby="loginHelp" required>
+          </div>
+          <div class="mb-4">
+            <label class="visually-hidden" for="docNumber">Número de documento de cédula</label>
+            <input class="form-control clave-input" type="text" id="docNumber" name="docNumber" placeholder="N° de documento de cédula (alternativa de validación)" autocomplete="off" aria-describedby="loginHelp">
           </div>
           <div class="input-group mb-4">
             <label class="visually-hidden" for="clavePassword">Ingresa tu ClaveÚnica</label>

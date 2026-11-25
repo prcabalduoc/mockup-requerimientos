@@ -48,13 +48,13 @@
           <div class="login-divider" aria-hidden="true"><span>o también</span></div>
           <a class="claveunica-button" href="claveunica.html">
             <i class="fa-regular fa-id-badge" aria-hidden="true"></i>
-            <span>Iniciar sesión</span>
+            <span>Iniciar sesión con ClaveÚnica</span>
           </a>
           <p class="small text-secondary mt-2 mb-0">Acceso de demostración. No se conecta con ClaveÚnica.</p>
 
           <div class="border-top mt-4 pt-4">
             <p class="mb-2 fw-semibold">¿Primera vez en el portal?</p>
-            <p class="small text-secondary mb-3">Solicita crear tu cuenta. La validación de identidad y correo requiere conexión con los servicios oficiales.</p>
+            <p class="small text-secondary mb-3">Crea tu cuenta ciudadana con RUT y correo electrónico. Recibirás un enlace de activación y credenciales en tu bandeja.</p>
             <button class="btn btn-outline-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#registroModal">Solicitar registro</button>
           </div>
           <p id="recuperar" class="small text-secondary mt-4 mb-0"><i class="fa-solid fa-circle-info me-1" aria-hidden="true"></i>Si no puedes acceder, consulta en Admisión de tu CESFAM por los canales oficiales.</p>
@@ -72,8 +72,8 @@
         </div>
         <form onsubmit="event.preventDefault(); document.getElementById('registrationStatus').classList.remove('d-none');">
           <div class="modal-body">
-            <p id="registrationStatus" class="form-feedback d-none" role="status">Para activar una cuenta se requiere validación segura de identidad y correo.</p>
-            <p class="small text-secondary">Ingresa tus datos de contacto. No escribas información sobre diagnósticos ni tratamientos.</p>
+            <p id="registrationStatus" class="form-feedback d-none" role="status">Registro simulado: en producción se envía un correo con enlace de activación y credenciales para validar tu cuenta.</p>
+            <p class="small text-secondary">Ingresa tu RUT y correo electrónico. No escribas información sobre diagnósticos ni tratamientos.</p>
             <div class="mb-3"><label for="registerRut" class="form-label">RUT *</label><input id="registerRut" class="form-control" name="rut" placeholder="12.345.678-9" autocomplete="off" required></div>
             <div class="mb-3"><label for="registerEmail" class="form-label">Correo electrónico *</label><input id="registerEmail" class="form-control" name="email" type="email" placeholder="tu@correo.cl" autocomplete="email" required></div>
           </div>

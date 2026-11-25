@@ -49,25 +49,26 @@
           <span class="metric-icon icon-purple"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></span>
           <h2 class="h5 fw-bold mt-3">Próxima citación</h2>
           <p class="mb-1">Control de salud · Medicina general</p>
-          <p class="fw-bold mb-1">Lunes 16 de noviembre · 10:30</p>
-          <p class="text-secondary mb-0">Sector azul · Box 3 (ejemplo)</p>
+          <p class="fw-bold mb-1">Lunes 30 de noviembre · 10:30</p>
+          <p class="text-secondary mb-2">Sector azul · Box 3 (ejemplo)</p>
+          <span class="badge text-bg-success">Estado: Confirmada</span>
         </div></article>
       </div>
       <div class="col-md-6 col-xl-4">
         <article class="card metric-card h-100"><div class="card-body">
           <span class="metric-icon icon-green"><i class="fa-solid fa-prescription-bottle-medical" aria-hidden="true"></i></span>
-          <h2 class="h5 fw-bold mt-3">Farmacia</h2>
-          <p class="mb-1">Tienes una receta por revisar.</p>
-          <p class="text-secondary mb-3">Estado y fecha de retiro de ejemplo.</p>
+          <h2 class="h5 fw-bold mt-3">Farmacia y recetas</h2>
+          <p class="mb-1">Receta crónica vigente: <strong>Listo para retiro</strong>.</p>
+          <p class="text-secondary mb-3">Fecha límite: 28 de noviembre · Alerta SMS/Email activa.</p>
           <a href="#farmacia" class="btn btn-outline-primary">Consultar retiro</a>
         </div></article>
       </div>
       <div class="col-md-6 col-xl-4">
         <article class="card metric-card h-100"><div class="card-body">
           <span class="metric-icon icon-orange"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i></span>
-          <h2 class="h5 fw-bold mt-3">Programa de alimentación</h2>
-          <p class="mb-1">Revisa el estado de retiro de alimentos.</p>
-          <p class="text-secondary mb-3">Fechas y requisitos se confirman en el CESFAM.</p>
+          <h2 class="h5 fw-bold mt-3">Programa alimentario (PNAC / PACAM)</h2>
+          <p class="mb-1">Próximo retiro de leche y alimentos asignado.</p>
+          <p class="text-secondary mb-3">Fecha asignada: 27 de noviembre (ejemplo).</p>
           <a href="#farmacia" class="btn btn-outline-primary">Ver información</a>
         </div></article>
       </div>
@@ -78,30 +79,109 @@
         <div class="card dashboard-card h-100">
           <div class="card-header bg-white px-4 py-3">
             <h2 class="h4 fw-bold mb-1" id="bookingTitle">Solicitar una hora</h2>
-            <p class="mb-0">Selecciona la prestación para consultar disponibilidad.</p>
+            <p class="mb-0">Selecciona la prestación para consultar disponibilidad y agendar.</p>
           </div>
           <div class="card-body p-4">
-            <form onsubmit="event.preventDefault(); document.getElementById('bookingStatus').classList.remove('d-none');">
+            <form onsubmit="event.preventDefault(); document.getElementById('bookingStatus').textContent='Solicitud registrada en modo demostración. Revisa los bloques disponibles abajo o confirma con tu CESFAM.'; document.getElementById('bookingStatus').classList.remove('d-none');">
               <p id="bookingStatus" class="form-feedback d-none" role="status">No se reservó una hora real; consulta la disponibilidad con el CESFAM.</p>
               <div class="row g-3">
-                <div class="col-md-6"><label class="form-label" for="appointmentType">Tipo de atención *</label><select class="form-select form-select-lg" id="appointmentType" required><option value="" selected disabled>Elige una prestación</option><option>Morbilidad</option><option>Control preventivo</option><option>Control de salud</option></select></div>
-                <div class="col-md-6"><label class="form-label" for="sector">Sector o equipo *</label><select class="form-select form-select-lg" id="sector" required><option value="" selected disabled>Selecciona sector</option><option>Sector azul (ejemplo)</option><option>Sector verde (ejemplo)</option><option>Por asignar</option></select></div>
-                <div class="col-md-6"><label class="form-label" for="preferredDate">Fecha preferida</label><input class="form-control form-control-lg" type="date" id="preferredDate"></div>
-                <div class="col-md-6"><label class="form-label" for="professional">Profesional</label><select class="form-select form-select-lg" id="professional"><option selected>Cualquier profesional disponible</option><option>Disponibilidad por confirmar</option></select></div>
+                <div class="col-md-6">
+                  <label class="form-label" for="appointmentType">Tipo de atención / Control *</label>
+                  <select class="form-select form-select-lg" id="appointmentType" required>
+                    <option value="" selected disabled>Elige una prestación</option>
+                    <option value="morbilidad">Morbilidad (médica)</option>
+                    <option value="matrona">Control preventivo · Matrona / Matronería</option>
+                    <option value="enfermeria">Control preventivo · Enfermería</option>
+                    <option value="nutricion">Control preventivo · Nutrición</option>
+                    <option value="control-salud">Control de salud general</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="sector">Sector o equipo *</label>
+                  <select class="form-select form-select-lg" id="sector" required>
+                    <option value="" selected disabled>Selecciona sector</option>
+                    <option>Sector azul (ejemplo)</option>
+                    <option>Sector verde (ejemplo)</option>
+                    <option>Por asignar</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="preferredDate">Fecha preferida</label>
+                  <input class="form-control form-control-lg" type="date" id="preferredDate">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="professional">Profesional</label>
+                  <select class="form-select form-select-lg" id="professional">
+                    <option selected>Cualquier profesional disponible</option>
+                    <option>Profesional A · Medicina General (demo)</option>
+                    <option>Profesional B · Matronería (demo)</option>
+                    <option>Profesional C · Enfermería / Nutrición (demo)</option>
+                  </select>
+                </div>
                 <div class="col-12"><p class="form-text mb-0">Las opciones reales dependen de la oferta y los bloques horarios publicados por el CESFAM.</p></div>
                 <div class="col-12"><button class="btn btn-primary btn-lg" type="submit">Consultar disponibilidad <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></button></div>
               </div>
             </form>
+
+            <div class="mt-4 pt-4 border-top">
+              <h3 class="h5 fw-bold mb-2">Bloques de disponibilidad de ejemplo</h3>
+              <p class="small text-secondary mb-3">Visualización de profesionales, sectores y horarios disponibles.</p>
+              <div class="list-group mb-4">
+                <div class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <div>
+                    <strong>Matrona / Matronería · Sector Azul (Box 2)</strong>
+                    <div class="small text-secondary">Lun 30 nov · 09:00–09:30 · Profesional B (demo)</div>
+                  </div>
+                  <span class="badge text-bg-success">Disponible</span>
+                </div>
+                <div class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <div>
+                    <strong>Enfermería · Sector Verde (Box 1)</strong>
+                    <div class="small text-secondary">Mar 01 dic · 10:00–10:30 · Profesional C (demo)</div>
+                  </div>
+                  <span class="badge text-bg-success">Disponible</span>
+                </div>
+                <div class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <div>
+                    <strong>Nutrición · Sector Azul (Box 3)</strong>
+                    <div class="small text-secondary">Mié 02 dic · 11:00–11:30 · Profesional C (demo)</div>
+                  </div>
+                  <span class="badge text-bg-success">Disponible</span>
+                </div>
+              </div>
+
+              <h3 class="h5 fw-bold mb-2">Mis citaciones pendientes</h3>
+              <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 p-3 rounded-3 bg-light border">
+                <div>
+                  <strong class="d-block">Control de salud · Medicina general (Lun 30 nov · 10:30)</strong>
+                  <span class="small text-secondary d-block">Estado: Confirmada · Sector azul · Box 3</span>
+                  <span class="small text-primary"><i class="fa-regular fa-bell me-1" aria-hidden="true"></i>Recordatorio automático SMS / Correo electrónico activo</span>
+                </div>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-sm btn-outline-primary" onclick="document.getElementById('bookingStatus').textContent='Reagendamiento simulado: elige una nueva fecha y horario arriba.'; document.getElementById('bookingStatus').classList.remove('d-none');">Reagendar</button>
+                  <button type="button" class="btn btn-sm btn-outline-danger" onclick="document.getElementById('bookingStatus').textContent='Cancelación simulada: el cupo ha sido liberado para otro paciente.'; document.getElementById('bookingStatus').classList.remove('d-none');">Cancelar hora</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="col-xl-5" id="farmacia" aria-labelledby="pharmacyTitle">
         <div class="card dashboard-card h-100">
-          <div class="card-header bg-white px-4 py-3"><h2 class="h4 fw-bold mb-1" id="pharmacyTitle">Retiros pendientes</h2><p class="mb-0">Revisa la información antes de acudir.</p></div>
+          <div class="card-header bg-white px-4 py-3"><h2 class="h4 fw-bold mb-1" id="pharmacyTitle">Retiros pendientes y recetas</h2><p class="mb-0">Revisa el estado de preparación antes de acudir.</p></div>
           <div class="list-group list-group-flush">
-            <div class="list-group-item px-4 py-3"><p class="fw-bold mb-1"><i class="fa-solid fa-prescription-bottle-medical me-2 text-primary" aria-hidden="true"></i>Medicamentos</p><p class="mb-1">Estado: disponible para retiro (ejemplo)</p><p class="text-secondary mb-0">Fecha límite: por confirmar con Farmacia</p></div>
-            <div class="list-group-item px-4 py-3"><p class="fw-bold mb-1"><i class="fa-solid fa-basket-shopping me-2 text-primary" aria-hidden="true"></i>Alimentos</p><p class="mb-1">Estado: consulta requerida (ejemplo)</p><p class="text-secondary mb-0">Consulta fechas y requisitos en tu CESFAM.</p></div>
+            <div class="list-group-item px-4 py-3">
+              <p class="fw-bold mb-1"><i class="fa-solid fa-prescription-bottle-medical me-2 text-primary" aria-hidden="true"></i>Recetas vigentes y medicamentos</p>
+              <p class="mb-1">Estado de preparación: <strong>Listo para retiro en Farmacia</strong> (ejemplo)</p>
+              <p class="text-secondary mb-1">Fecha límite de retiro: <strong>28 de noviembre de 2026</strong></p>
+              <p class="small text-primary mb-0"><i class="fa-regular fa-envelope me-1" aria-hidden="true"></i>Alerta automática SMS / Email activada en tu perfil</p>
+            </div>
+            <div class="list-group-item px-4 py-3">
+              <p class="fw-bold mb-1"><i class="fa-solid fa-basket-shopping me-2 text-primary" aria-hidden="true"></i>Programa alimentario (PNAC / PACAM)</p>
+              <p class="mb-1">Beneficio: <strong>Leche y alimentos complementarios</strong></p>
+              <p class="text-secondary mb-0">Fecha asignada de retiro: <strong>27 de noviembre de 2026</strong> (ejemplo)</p>
+            </div>
           </div>
           <div class="p-4 mt-auto"><a href="contacto.html" class="btn btn-outline-primary w-100">Consultar a OIRS</a></div>
         </div>
@@ -111,11 +191,21 @@
     <section class="mb-4" id="programas" aria-labelledby="programsTitle">
       <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-3">
         <div><span class="eyebrow">INFORMACIÓN PARA LA COMUNIDAD</span><h2 class="h3 fw-bold mt-2 mb-0" id="programsTitle">Salud, programas y comunidad</h2></div>
-        <form class="search-form" role="search" onsubmit="event.preventDefault(); document.getElementById('searchStatus').textContent='La búsqueda es una demostración; consulta la información disponible a continuación.';">
-          <label for="siteSearch" class="visually-hidden">Buscar trámites y preguntas frecuentes</label>
-          <div class="input-group"><input class="form-control" id="siteSearch" type="search" placeholder="Buscar trámites o preguntas frecuentes"><button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-magnifying-glass me-1" aria-hidden="true"></i>Buscar</button></div>
-          <span class="visually-hidden" id="searchStatus" aria-live="polite"></span>
-        </form>
+        <div>
+          <form class="search-form" role="search" onsubmit="event.preventDefault(); document.getElementById('searchStatus').textContent='La búsqueda es una demostración; consulta la información disponible a continuación.';">
+            <label for="siteSearch" class="visually-hidden">Buscar trámites y preguntas frecuentes</label>
+            <div class="input-group"><input class="form-control" id="siteSearch" type="search" placeholder="Buscar trámites o preguntas frecuentes"><button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-magnifying-glass me-1" aria-hidden="true"></i>Buscar</button></div>
+            <span class="visually-hidden" id="searchStatus" aria-live="polite"></span>
+          </form>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="downloadFaqTxt()">
+              <i class="fa-regular fa-file-lines me-1" aria-hidden="true"></i>Descargar FAQ (.txt)
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.print()">
+              <i class="fa-regular fa-file-pdf me-1" aria-hidden="true"></i>Guardar / Imprimir FAQ (PDF)
+            </button>
+          </div>
+        </div>
       </div>
       <div class="row g-3">
         <div class="col-sm-6 col-xl-3"><article class="card resource-card h-100"><div class="card-body"><span class="metric-icon icon-blue"><i class="fa-solid fa-syringe" aria-hidden="true"></i></span><h3 class="h5 fw-bold mt-3">Vacunación</h3><p>Consulta campañas, grupos objetivo y fechas vigentes.</p><a href="#informacion-oficial">Ver información <span class="visually-hidden">sobre vacunación</span><i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a></div></article></div>
@@ -140,5 +230,24 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function downloadFaqTxt() {
+      const content = [
+        "PREGUNTAS FRECUENTES - PORTAL DE PACIENTES CESFAM (DEMO)",
+        "",
+        "1. Solicitud de horas: Puedes solicitar morbilidad o controles preventivos (matroneria, enfermeria, nutricion).",
+        "2. Cancelacion o reagendamiento: Permite liberar tu cupo para otro paciente.",
+        "3. Farmacia y PNAC/PACAM: Consulta el estado de tus recetas vigentes, fecha limite y retiro de alimentos.",
+        "4. OIRS: Utiliza el formulario de contacto para sugerencias, felicitaciones o reclamos."
+      ].join("\n");
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "preguntas-frecuentes-cesfam.txt";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
 </body>
 </html>
